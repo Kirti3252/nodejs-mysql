@@ -87,21 +87,6 @@ app.post('/myaction', function(req, res) {
 
   res.end();
 });
-var php = require("php"); 
 
-var path = require("path"); 
-
-var app = express();
-
-app.use("/", php.cgi("/path/to/wordpress"));
-
-
-
-
-    //  app.use('/api', function(req, res) {
-    //   console.log("use");
-    //   test.use(req, res);
-    // });
-    
   }
 };
