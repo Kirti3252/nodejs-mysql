@@ -1,5 +1,5 @@
 {
-  "name": "test-app",
+  "name": "nodejsmysql",
   "version": "1.0.0",
   "description": "test-app REST Api",
   "main": "index.js",
