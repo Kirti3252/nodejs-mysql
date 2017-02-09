@@ -5,7 +5,6 @@ var routes = require('./routes')
 var config = require('./config'); // get our config file
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
 
-
 var app = express();
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
@@ -91,6 +90,6 @@ routes.configure(app);
 var port = process.env.PORT || 8080; 
 app.set('superSecret', config.secret); // secret variable
 
-var server = app.listen(8000, function() {
+var server = app.listen(port, function() {
   console.log('Server listening on port ' + server.address().port);
 });
