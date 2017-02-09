@@ -3,15 +3,13 @@ var test = require('./models/test');
 var mysql = require('mysql');
 var connection = mysql.createConnection({
 
-  host     : 'sql6.freesqldatabase.com',
-  user     : 'sql6157867',
-  password : '5xytwqbMJE',
-  database : 'sql6157867',
+  host: 'sql6.freesqldatabase.com',
+  user: 'sql6157867',
+  password: '5xytwqbMJE',
+  database: 'sql6157867',
   posrt:3306
 });
  
-
-
 module.exports = {
   configure: function(app) {
     app.get('/test/', function(req, res) {
