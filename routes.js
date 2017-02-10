@@ -57,7 +57,7 @@ app.get('/showSignUpPage',function(req,res){
   res.sendFile('signup.html',{'root':__dirname + '/models'})
 });
 app.get('/getuser',function(req,res){
-  res.sendFile('getuser.html',{'root':__dirname + '/models'})
+  res.sendFile('https://nodejswithphp.000webhostapp.com/index.php')
 });
 
 app.get('/message',function(req,res){
