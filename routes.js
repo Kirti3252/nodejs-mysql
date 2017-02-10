@@ -87,6 +87,29 @@ app.post('/myaction', function(req, res) {
 
   res.end();
 });
+       app.post('/verifyuser', function(req,res){
+  console.log('checking user in database');
+  console.log(req.body.password);
+  var selectString = 'SELECT COUNT(email) FROM test_data WHERE email="'+req.body.email+'" AND password="'+req.body.password+'" ';
+   
+  connection.query(selectString, function(err, results) {
+    
+        console.log(results);
+        var string=JSON.stringify(results);
+        console.log(string);
+        //this is a walkaround of checking if the email password combination is 1 or not it will fail if wrong password is given
+        if (string === '[{"COUNT(email)":1}]') {
+      res.redirect('/loggedin');
+  
+          }
+        if (string === '[{"COUNT(email)":0}]')  {
+          res.redirect('/showSignInPageretry');
+          
+        }
+      });
+
+     });
+
 
   }
 };
