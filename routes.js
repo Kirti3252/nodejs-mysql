@@ -12,19 +12,19 @@ var connection = mysql.createConnection({
  
 module.exports = {
   configure: function(app) {
-    app.get('/test/', function(req, res) {
+    app.get('/api/test/', function(req, res) {
       test.get(res);
     });
 
-    app.post('/test/', function(req, res) {
+    app.post('/api/test/', function(req, res) {
       test.create(req.body, res);
     });
 
-    app.put('/test/', function(req, res) {
+    app.put('/api/test/', function(req, res) {
       test.update(req.body, res);
     });
 
-    app.delete('/test/:id/', function(req, res) {
+    app.delete('/api/test/:id/', function(req, res) {
       test.delete(req.params.id, res);
     });
 
