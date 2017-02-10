@@ -64,15 +64,38 @@
 
 
           <div class="inner cover">
-              <form class="form-signin"  action="/myuser" method="post">
-                <h2 class="email">Please sign up</h2>
-                <label for="email" class="sr-only">Your Email address</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required="" autofocus="">
-                <label for="pass" class="sr-only">New Password</label>
-                <input type="password" id="pass" class="form-control" name="password" placeholder="Password" required="">
-                
-                <button id="btnSignIn" class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-              </form>
+              
+        <?php
+$content =     file_get_contents("https://nodejsmysql.herokuapp.com/api/test/");
+
+$result  = json_decode($content);
+
+print_r( $result );
+?>
+        
+        
+<?php
+$url="https://nodejsmysql.herokuapp.com/api/test/";
+//  Initiate curl
+$ch = curl_init();
+// Disable SSL verification
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+// Will return the response, if false it print the response
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// Set the url
+curl_setopt($ch, CURLOPT_URL,$url);
+// Execute
+echo 'test';
+print_r($ch);
+$result=curl_exec($ch);
+print_r($result);
+echo "$result";
+// Closing
+curl_close($ch);
+
+// Will dump a beauty json :3
+var_dump(json_decode($result, true));
+?>
           </div>
 
 
